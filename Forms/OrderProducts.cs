@@ -40,8 +40,8 @@ namespace CrmAzureGUI.Forms
 
         private void BTN_addOrdProd_Click(object sender, EventArgs e)
         {
-            int prId = int.Parse(textBox1.Text);
-            int ordId = int.Parse(textBox2.Text);
+            int prId = int.Parse(textBox2.Text);
+            int ordId = int.Parse(textBox1.Text);
 
             using (var db = new CrmAzureDbContext())
             {
@@ -49,6 +49,7 @@ namespace CrmAzureGUI.Forms
                 {
                     ProductId = prId,
                     OrderId = ordId
+   
                 };
                 db.OrderProduct.Add(orderproduct);
                 db.SaveChanges();

@@ -5747,19 +5747,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\illarios23\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\CrmAzureGUI\\CrmAzureGUI.csproj",
+      "projectUniqueName": "C:\\Users\\illarios23\\source\\repos\\CrmAzureGUI\\CrmAzureGUI.csproj",
       "projectName": "CrmAzureGUI",
-      "projectPath": "C:\\Users\\User\\source\\repos\\CrmAzureGUI\\CrmAzureGUI.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\CrmAzureGUI\\obj\\",
+      "projectPath": "C:\\Users\\illarios23\\source\\repos\\CrmAzureGUI\\CrmAzureGUI.csproj",
+      "packagesPath": "C:\\Users\\illarios23\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\illarios23\\source\\repos\\CrmAzureGUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\illarios23\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5771,6 +5771,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5782,6 +5783,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
@@ -5816,7 +5818,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

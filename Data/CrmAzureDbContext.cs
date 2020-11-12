@@ -34,7 +34,7 @@ namespace CrmAzureGUI.Data
             // works on EF Core 5.0
             //modelBuilder.Entity<Order>().HasMany(o => o.Products).WitMany()
             // Many-to-many: works on EF Core 3.x
-            modelBuilder.Entity<OrderProduct>().HasKey(op => new { op.OrderId, op.ProductId });
+            //modelBuilder.Entity<OrderProduct>().HasKey(op => new { op.OrderId, op.ProductId });
         }
     }
 }

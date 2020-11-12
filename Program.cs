@@ -9,6 +9,7 @@ using CrmAzureGUI.Data;
 using CrmAzureGUI.Model;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace CrmAzureGUI
 {
@@ -34,16 +35,71 @@ namespace CrmAzureGUI
             //    db.SaveChanges();
             //}
 
-        //    using crmazuredbcontext appdb = new crmazuredbcontext();
-        //    {
-        //        var custs = appdb.customer
-        //                 .include(blog => blog.posts
-        //    .where(post => post.blogid == 1)
-        //    .orderbydescending(post => post.title)
-        //    .take(5))
-        //    .theninclude(p => p.comments) // also include comments from posts
-        //.tolist();
-        //    }
+            //using CrmAzureDbContext appdb = new CrmAzureDbContext();
+            //{
+            //    var custs = appdb.OrderProduct
+            //      .Where(a => a.ProductId == 1)
+            //      .Include(a => a.Product)
+            //      .FirstOrDefault(a => a.ProductId == 1);
+
+            //    var x = custs.Product.Price;
+            //}
+
+            //using CrmAzureDbContext appdb = new CrmAzureDbContext();
+            //{
+
+            //    var x = appdb.Order
+            //    .Include(a => a.Customer)
+            //    .Where(a => a.CustomerId == a.Customer.Id)
+            //    .OrderBy(a => a.CustomerId)
+            //    .ToList();
+
+            //    Debug.WriteLine(x.Where(a => a.CustomerId == 13).Count());
+
+            //}
+
+            using CrmAzureDbContext appdb = new CrmAzureDbContext();
+            {
+                //get the total orders of each customer
+                var customers = appdb.Customer.ToList();
+
+                foreach (var i in customers)
+                {
+                    var x = appdb.OrderProduct
+                    .Include(a => a.Order)
+                        .ThenInclude(b => b.Customer)
+                    .Where(b => b.Order.CustomerId == i.Id)
+                    .Select(a => a.Product.Price)
+                    .Sum();
+                    Debug.WriteLine(x , i.Id.ToString());
+                }
+                    //foreach (var  a in x)
+                //{
+                //    var y = a.ProductId;
+                //    var z = appdb.Product
+                //      //  .Include( b => b.Price)
+                //        .Where(b => b.Id == y)
+                //        .Select(b => b.Price)
+                //        .Sum();
+                    
+                    
+                //    Debug.WriteLine(z);
+                //}
+               
+
+                
+
+            }
+
+
+
+            //foreach(var oi in custs)
+            //{
+
+            //    Debug.WriteLine(oi.Id);
+            //    Debug.WriteLine(oi.Orders.Where(a => a.CustomerId == oi.Id).Count());
+            //}
+
 
 
 
